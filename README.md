@@ -1,6 +1,6 @@
 # 🧪 La Perfumoteca
 
-Proyecto web para la gestión y curación de una colección de perfumes.
+Proyecto web para la gestión de una colección de perfumes.
 
 🔗 **[Visita la aplicación aquí](https://biblioteca-perfumes.infinityfreeapp.com/)**
 
@@ -14,6 +14,7 @@ Proyecto web para la gestión y curación de una colección de perfumes.
 - **Frontend:** HTML5, CSS3
 - **Backend:** PHP
 - **Base de Datos:** MySQL
+- **Host/Dominio: InfinityFree**
 
 ## 📂 Estructura
 Las credenciales de conexión están gestionadas mediante el archivo `db.php`, excluido del repositorio por seguridad.
