@@ -1,0 +1,563 @@
+/* La Perfumoteca - Estilo Colección de Lujo */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-void: #080a0f;
+    --bg-library: #0f131a;
+    --bg-card: #141a24;
+    --accent-gold: #c5a880;
+    --accent-gold-dark: #a3875f;
+    --accent-gold-glow: rgba(197, 168, 128, 0.2);
+    --text-pure: #ffffff;
+    --text-silk: #e2e8f0;
+    --text-muted: #718096;
+    --accent-crimson: #a54242;
+    --accent-crimson-hover: #bd4f4f;
+    --font-editorial: 'Cinzel', 'Georgia', serif;
+    --font-clean: 'Montserrat', sans-serif;
+    --ease-premium: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-void);
+    color: var(--text-silk);
+    font-family: var(--font-clean);
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.5px;
+}
+
+@keyframes revealPage {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes goldPulse {
+    0% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(197, 168, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(197, 168, 128, 0); }
+}
+
+.page-reveal {
+    animation: revealPage 1s var(--ease-premium) forwards;
+}
+
+header {
+    background: rgba(15, 19, 26, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--ease-premium);
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+header .logo-img {
+    height: 55px;
+    width: auto;
+    border-radius: 2px;
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    transition: all 0.4s var(--ease-premium);
+}
+
+header .logo-container:hover .logo-img {
+    border-color: var(--accent-gold);
+    transform: scale(1.03);
+}
+
+header nav {
+    display: flex;
+    gap: 10px;
+}
+
+header nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s var(--ease-premium);
+    position: relative;
+}
+
+header nav a:hover, header nav a.active {
+    color: var(--accent-gold);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 1px;
+    background-color: var(--accent-gold);
+    transform: scaleX(0);
+    transition: transform 0.3s var(--ease-premium);
+}
+
+header nav a:hover::after, header nav a.active::after {
+    transform: scaleX(1);
+}
+
+header .logout-btn {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid rgba(165, 66, 66, 0.4);
+    color: #e57373;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 0;
+    transition: all 0.3s var(--ease-premium);
+    text-decoration: none;
+}
+
+header .logout-btn:hover {
+    background: var(--accent-crimson);
+    color: var(--text-pure);
+    border-color: var(--accent-crimson);
+    box-shadow: 0 4px 12px rgba(165, 66, 66, 0.2);
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 140px 40px 60px 40px;
+}
+
+h1 {
+    font-family: var(--font-editorial);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--text-pure);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-family: var(--font-editorial);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background-color: var(--accent-gold);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(197, 168, 128, 0.08);
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s var(--ease-premium);
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 168, 128, 0.25);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(197, 168, 128, 0.03);
+}
+
+.card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.img-container {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+    background: #0b0d13;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.card img.perfume-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease-premium);
+}
+
+.card:hover img.perfume-img {
+    transform: scale(1.06);
+}
+
+.card h3 {
+    font-family: var(--font-editorial);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--text-pure);
+    margin: 10px 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.card h3 .status-badge {
+    font-size: 12px;
+    color: var(--accent-gold);
+}
+
+.card .botones {
+    width: 100%;
+    border-top: 1px solid rgba(197, 168, 128, 0.08);
+    background: rgba(8, 10, 15, 0.4);
+}
+
+.card .botones form {
+    display: block;
+    width: 100%;
+}
+
+.card .botones button {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    background: transparent;
+    color: var(--text-silk);
+    font-family: var(--font-clean);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.05);
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s var(--ease-premium);
+}
+
+.card .botones button:last-child {
+    border-bottom: none;
+}
+
+.card .botones button:hover:not(:disabled) {
+    background: rgba(197, 168, 128, 0.08);
+    color: var(--accent-gold);
+}
+
+.card .botones button:disabled {
+    color: rgba(255, 255, 255, 0.15);
+    background: transparent;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    font-weight: 300;
+}
+
+.lista-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.perfume-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(197, 168, 128, 0.08);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.4s var(--ease-premium);
+}
+
+.perfume-card:hover {
+    border-color: rgba(197, 168, 128, 0.2);
+    transform: translateY(-4px);
+}
+
+.perfume-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background: #0b0d13;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.perfume-card p {
+    font-family: var(--font-editorial);
+    font-size: 15px;
+    color: var(--text-pure);
+    margin-bottom: 15px;
+}
+
+.perfume-card button {
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid rgba(165, 66, 66, 0.4);
+    color: #e57373;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-premium);
+}
+
+.perfume-card button:hover {
+    background: var(--accent-crimson);
+    color: white;
+    border-color: var(--accent-crimson);
+}
+
+.empty-msg {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+.auth-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-void);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.form-container {
+    background: var(--bg-library);
+    width: 100%;
+    max-width: 420px;
+    padding: 45px 40px;
+    border: 1px solid rgba(197, 168, 128, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+}
+
+.login-logo {
+    height: 70px;
+    width: auto;
+    margin-bottom: 30px;
+    border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.form-container h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 10px 0;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-pure);
+    font-family: var(--font-clean);
+    font-size: 13px;
+    transition: all 0.3s var(--ease-premium);
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 8px rgba(197, 168, 128, 0.1);
+}
+
+.form-container button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: var(--accent-gold);
+    color: var(--bg-void);
+    font-family: var(--font-clean);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-premium);
+}
+
+.form-container button:hover {
+    background: var(--accent-gold-dark);
+    color: var(--text-pure);
+    box-shadow: 0 4px 15px rgba(197, 168, 128, 0.2);
+}
+
+.mensaje {
+    background: rgba(165, 66, 66, 0.15);
+    border: 1px solid rgba(165, 66, 66, 0.3);
+    color: #e57373;
+    padding: 12px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.registro-link, .login-link {
+    margin-top: 25px;
+    display: inline-block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.3s var(--ease-premium);
+}
+
+.registro-link:hover, .login-link:hover {
+    color: var(--accent-gold);
+}
+
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-card {
+    background: var(--bg-library);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgba(197, 168, 128, 0.12);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #121722 0%, #080a0f 100%);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.12);
+    padding: 45px 30px;
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    background: transparent;
+    color: var(--accent-gold);
+    font-family: var(--font-editorial);
+    font-size: 36px;
+    line-height: 86px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    font-weight: 400;
+    border: 1px solid var(--accent-gold);
+    animation: goldPulse 2s infinite;
+}
+
+.profile-header h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.profile-header h2::after {
+    display: none;
+}
+
+.profile-content {
+    padding: 40px;
+}
+
+.info-group {
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 12px;
+}
+
+.info-group label {
+    display: block;
+    color: var(--accent-gold);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.info-group span {
+    font-size: 15px;
+    color: var(--text-silk);
+    font-weight: 300;
+}
+
+.btn-edit {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 28px;
+    background: transparent;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s var(--ease-premium);
+}
+
+.btn-edit:hover {
+    background: var(--accent-gold);
+    color: var(--bg-void);
+    box-shadow: 0 4px 15px rgba(197, 168, 128, 0.15);
+}
