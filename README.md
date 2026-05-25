@@ -14,7 +14,7 @@ Proyecto web para la gestión de una colección de perfumes.
 - **Frontend:** HTML5, CSS3
 - **Backend:** PHP
 - **Base de Datos:** MySQL
-- **Host/Dominio: InfinityFree**
+- **Host/Dominio:** InfinityFree
 
 ## 📂 Estructura
 Las credenciales de conexión están gestionadas mediante el archivo `db.php`, excluido del repositorio por seguridad.
