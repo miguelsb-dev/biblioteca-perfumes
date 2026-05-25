@@ -1,21 +1,20 @@
-# La Perfumoteca
+# 🧪 La Perfumoteca
 
-Proyecto web desarrollado para la gestión y curación de una colección de perfumes. 
+Proyecto web para la gestión y curación de una colección de perfumes.
 
-## Características
-- **Catálogo interactivo:** Visualización de perfumes con detalles y características.
-- **Gestión de usuario:** Registro e inicio de sesión seguro.
-- **Listas personalizadas:** Los usuarios pueden crear y organizar sus colecciones privadas.
-- **Diseño responsive:** Adaptado para diferentes dispositivos.
+## ✨ Características
+- 📖 **Catálogo:** Visualización detallada de perfumes.
+- 🔐 **Acceso:** Sistema de registro e inicio de sesión.
+- 📋 **Colecciones:** Gestión de listas privadas de perfumes.
+- 📱 **Diseño:** Interfaz responsive.
 
-## Tecnologías
-- **Frontend:** HTML5, CSS3.
-- **Backend:** PHP.
-- **Base de Datos:** MySQL.
+## 🛠 Tecnologías
+- **Frontend:** HTML5, CSS3
+- **Backend:** PHP
+- **Base de Datos:** MySQL
 
-## Configuración para desarrollo local
-Para ejecutar este proyecto en tu entorno local (XAMPP/WAMP), sigue estos pasos:
+## 📂 Estructura
+Las credenciales de conexión están gestionadas mediante el archivo `db.php`, excluido del repositorio por seguridad.
 
-1. **Clona el repositorio:**
-   ```bash
-   git clone [https://github.com/tu-usuario/nombre-de-tu-repo.git](https://github.com/tu-usuario/nombre-de-tu-repo.git)
+## 👤 Autor
+Miguel Soto Blanco
