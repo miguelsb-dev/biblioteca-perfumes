@@ -2,10 +2,12 @@
 
 Proyecto web para la gestión y curación de una colección de perfumes.
 
+🔗 **[Visita la aplicación aquí](https://biblioteca-perfumes.infinityfreeapp.com/)**
+
 ## ✨ Características
 - 📖 **Catálogo:** Visualización detallada de perfumes.
 - 🔐 **Acceso:** Sistema de registro e inicio de sesión.
-- 📋 **Colecciones:** Gestión de listas privadas de perfumes.
+- 📋 **Colecciones:** Gestión de listas privadas.
 - 📱 **Diseño:** Interfaz responsive.
 
 ## 🛠 Tecnologías
